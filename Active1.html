@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Mapping and Sorting</title>
+</head>
+<body>
+    <h1>Array Mapping and Sorting Example</h1>
+
+    <!-- Button to trigger the operations -->
+    <button onclick="mapAndSortArray()">Map and Sort Array</button>
+
+    <!-- Div to display the output -->
+    <div id="output"></div>
+
+    <script>
+        // Function to perform array mapping and sorting
+        function mapAndSortArray() {
+            // Original array of numbers
+            let originalArray = [5, 8, 3, 12, 7];
+
+            // Map the array (e.g., multiply each element by 2)
+            let mappedArray = originalArray.map(number => number * 2);
+
+            // Sort the mapped array in ascending order
+            let ascendingArray = [...mappedArray].sort((a, b) => a - b);
+
+            // Sort the mapped array in descending order
+            let descendingArray = [...mappedArray].sort((a, b) => b - a);
+
+            // Display the results in the HTML
+            document.getElementById("output").innerHTML = 
+                `<p>Original Array: ${originalArray.join(", ")}</p>` +
+                `<p>Mapped Array (Multiplied by 2): ${mappedArray.join(", ")}</p>` +
+                `<p>Ascending Order: ${ascendingArray.join(", ")}</p>` +
+                `<p>Descending Order: ${descendingArray.join(", ")}</p>`;
+        }
+    </script>
+</body>
+</html>
